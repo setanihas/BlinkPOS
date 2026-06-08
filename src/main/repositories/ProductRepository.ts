@@ -46,7 +46,8 @@ export class ProductRepository {
       name: 'name',
       stock: 'stock',
       salePrice: 'sale_price',
-      createdAt: 'created_at'
+      createdAt: 'created_at',
+      purchasePrice: 'purchase_price'
     }
     const sortColumn = sortFieldMap[query.sortField ?? 'name']
     const sortDir = query.sortDirection === 'desc' ? 'DESC' : 'ASC'
