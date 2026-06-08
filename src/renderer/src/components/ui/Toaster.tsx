@@ -14,7 +14,7 @@ export function Toaster(): JSX.Element {
     <div className="fixed bottom-4 right-4 z-[9999] flex flex-col gap-2 pointer-events-none" style={{ maxWidth: 340 }}>
       {toasts.map(t => {
         const type = (t.type ?? 'info') as keyof typeof cfg
-        const { Icon, color, bg, border } = cfg[type]
+        const { Icon, color, border } = cfg[type]
         return (
           <div key={t.id}
             className="flex items-start gap-2.5 pl-3 pr-2 py-2.5 rounded-lg border pointer-events-auto anim-right"

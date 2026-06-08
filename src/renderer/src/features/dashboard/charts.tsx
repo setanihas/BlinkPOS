@@ -3,7 +3,7 @@ import {
   PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid,
   Tooltip, Legend
 } from 'recharts'
-import { useTranslation } from 'react-i18next'
+
 import type { TimeSeriesPoint, TopProduct, ExpenseBreakdownSlice, StockMovementPoint } from '@shared/domain'
 import { useChartColors } from './useChartColors'
 import { formatMoney, formatShortDate } from '../../lib/format'

@@ -1,13 +1,12 @@
 import { useMemo, useRef, useState, useCallback, useEffect } from 'react'
 import {
   ScanLine, ShoppingCart, X, Check, Search,
-  Banknote, CreditCard, Delete, Plus, Zap,
-  ChevronRight, ReceiptText
+  Banknote, CreditCard, Delete, Zap, ReceiptText
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import type { Product } from '@shared/domain'
 import { Topbar } from '../../components/layout/Topbar'
-import { Button, Input, EmptyState, Modal, Badge } from '../../components/ui'
+import { EmptyState, Modal } from '../../components/ui'
 import { ConfirmDialog } from '../../components/ui/ConfirmDialog'
 import { useCartStore, computeCartTotals } from '../../stores/cartStore'
 import { useBarcodeScanner } from '../../hooks/useBarcodeScanner'

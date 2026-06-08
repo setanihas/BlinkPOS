@@ -134,7 +134,6 @@ export default function ProductsPage(): JSX.Element {
               </THead>
               <TBody>
                 {data.items.map(p => {
-                  const st = p.stock === 0 ? 'danger' as const : p.stock <= threshold ? 'warning' as const : 'success' as const
                   const bg = avatarColor(p.name)
                   return (
                     <TR key={p.id}>

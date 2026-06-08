@@ -10,7 +10,7 @@ import {
 import { settingsSchema, type SettingsFormValues } from '@shared/schemas'
 import { Topbar } from '../../components/layout/Topbar'
 import { PageBody } from '../../components/layout/AppShell'
-import { Button, Input, Select, Field, Spinner, ErrorState } from '../../components/ui'
+import { Button, Input, Select, Spinner, ErrorState } from '../../components/ui'
 import { useSettings, useUpdateSettings } from '../../hooks/useSettings'
 import { useTheme } from '../../app/ThemeProvider'
 import { translateError, setLanguage, type Language } from '../../i18n'
@@ -88,7 +88,7 @@ export default function SettingsPage(): JSX.Element {
   const { data: apiCats } = useProductCategories()
   useEffect(() => { if (apiCats?.length) mergeFrom(apiCats) }, [apiCats])
 
-  const { register, handleSubmit, reset, watch, formState: { errors, isDirty } } = useForm<SettingsFormValues>({
+  const { register, handleSubmit, reset, formState: { errors, isDirty } } = useForm<SettingsFormValues>({
     resolver: zodResolver(settingsSchema),
   })
   useEffect(() => { if (settings) reset(settings) }, [settings, reset])

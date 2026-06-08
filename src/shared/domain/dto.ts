@@ -18,7 +18,7 @@ export interface CreateProductDTO {
 
 export type UpdateProductDTO = Partial<CreateProductDTO>
 
-export type ProductSortField = 'name' | 'stock' | 'salePrice' | 'createdAt'
+export type ProductSortField = 'name' | 'stock' | 'salePrice' | 'createdAt' | 'purchasePrice'
 export type SortDirection = 'asc' | 'desc'
 
 export interface ProductQuery {
