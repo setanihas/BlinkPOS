@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────
+   DARK  (default)
+───────────────────────────────────────────────────────────── */
+:root,
+[data-theme='dark'] {
+  --bg:        #0c0c0f;
+  --s0:        #111117;   /* card / panel */
+  --s1:        #15151c;   /* elevated */
+  --s2:        #1b1b24;   /* inputs, secondary */
+  --s3:        #20202c;   /* hover */
+  --s4:        #282836;   /* active / selected */
+
+  --b0:        #1e1e2a;   /* hairline border */
+  --b1:        #272735;   /* standard border */
+  --b2:        #32324a;   /* strong border */
+
+  --t0:        #eaeaf0;   /* primary text */
+  --t1:        #9090aa;   /* secondary */
+  --t2:        #44445a;   /* muted / placeholder */
+
+  --a0:        #5d5fef;   /* accent – indigo */
+  --a1:        #7577f3;   /* accent hover */
+  --a-bg:      rgba(93,95,239,.10);
+  --a-ring:    rgba(93,95,239,.20);
+
+  --ok:        #16a34a;
+  --ok-t:      #22c55e;
+  --ok-bg:     rgba(22,163,74,.10);
+  --ok-b:      rgba(22,163,74,.20);
+
+  --er:        #dc2626;
+  --er-t:      #f87171;
+  --er-bg:     rgba(220,38,38,.10);
+  --er-b:      rgba(220,38,38,.20);
+
+  --wa:        #d97706;
+  --wa-t:      #fbbf24;
+  --wa-bg:     rgba(217,119,6,.10);
+  --wa-b:      rgba(217,119,6,.20);
+
+  --in:        #2563eb;
+  --in-t:      #60a5fa;
+  --in-bg:     rgba(37,99,235,.10);
+  --in-b:      rgba(37,99,235,.20);
+
+  --grid:      rgba(255,255,255,.03);
+  --nav-blur:  rgba(12,12,15,.88);
+  --scrim:     rgba(0,0,0,.72);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   LIGHT
+───────────────────────────────────────────────────────────── */
+[data-theme='light'] {
+  --bg:        #f3f3f7;
+  --s0:        #ffffff;
+  --s1:        #f9f9fc;
+  --s2:        #f1f1f6;
+  --s3:        #e9e9f0;
+  --s4:        #e0e0ea;
+
+  --b0:        #e4e4ef;
+  --b1:        #d8d8e8;
+  --b2:        #c4c4d8;
+
+  --t0:        #0e0e18;
+  --t1:        #5a5a72;
+  --t2:        #aaaabe;
+
+  --a0:        #4f46e5;
+  --a1:        #6366f1;
+  --a-bg:      rgba(79,70,229,.08);
+  --a-ring:    rgba(79,70,229,.18);
+
+  --ok:        #16a34a;
+  --ok-t:      #15803d;
+  --ok-bg:     rgba(22,163,74,.08);
+  --ok-b:      rgba(22,163,74,.18);
+
+  --er:        #dc2626;
+  --er-t:      #b91c1c;
+  --er-bg:     rgba(220,38,38,.08);
+  --er-b:      rgba(220,38,38,.18);
+
+  --wa:        #d97706;
+  --wa-t:      #92400e;
+  --wa-bg:     rgba(217,119,6,.08);
+  --wa-b:      rgba(217,119,6,.18);
+
+  --in:        #2563eb;
+  --in-t:      #1d4ed8;
+  --in-bg:     rgba(37,99,235,.08);
+  --in-b:      rgba(37,99,235,.18);
+
+  --grid:      rgba(0,0,0,.04);
+  --nav-blur:  rgba(243,243,247,.90);
+  --scrim:     rgba(0,0,0,.50);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   STATIC TOKENS
+───────────────────────────────────────────────────────────── */
+:root {
+  --sidebar-w: 220px;
+
+  /* border-radius – deliberately restrained */
+  --r2:  2px;
+  --r4:  4px;
+  --r6:  6px;
+  --r8:  8px;
+  --r10: 10px;
+  --r12: 12px;
+  --r99: 9999px;
+
+  /* type */
+  --font:      'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', ui-monospace, monospace;
+
+  /* shadows – layered, purposeful */
+  --sh1: 0 1px 2px rgba(0,0,0,.18);
+  --sh2: 0 1px 3px rgba(0,0,0,.22), 0 2px 6px rgba(0,0,0,.14);
+  --sh3: 0 4px 12px rgba(0,0,0,.28), 0 1px 3px rgba(0,0,0,.16);
+  --sh4: 0 8px 28px rgba(0,0,0,.36), 0 4px 10px rgba(0,0,0,.18);
+  --sh5: 0 20px 60px rgba(0,0,0,.50), 0 8px 20px rgba(0,0,0,.24);
+
+  /* easing */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:  cubic-bezier(0.4, 0, 1, 1);
+  --ease-std: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   KEYFRAMES
+───────────────────────────────────────────────────────────── */
+@keyframes fadeIn      { from { opacity: 0 }                       to { opacity: 1 } }
+@keyframes modalIn     { from { opacity: 0; transform: translateY(10px) scale(.98) } to { opacity: 1; transform: none } }
+@keyframes slideRight  { from { opacity: 0; transform: translateX(16px) } to { opacity: 1; transform: none } }
+@keyframes slideDown   { from { opacity: 0; transform: translateY(-6px) } to { opacity: 1; transform: none } }
+@keyframes spin        { to   { transform: rotate(360deg) } }
+@keyframes shimmer {
+  0%   { background-position: -400px 0 }
+  100% { background-position:  400px 0 }
+}
+@keyframes pulse-dot   { 0%,100% { transform: scale(1) } 50% { transform: scale(1.4) } }
+
+/* ─────────────────────────────────────────────────────────────
+   BASE
+───────────────────────────────────────────────────────────── */
+*,*::before,*::after { box-sizing: border-box; margin: 0; }
+
+html, body, #root { height: 100%; }
+
+body {
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--t0);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern','liga','calt';
+}
+
+::selection { background: var(--a-bg); color: var(--t0); }
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--b2); border-radius: var(--r99); }
+::-webkit-scrollbar-thumb:hover { background: var(--t2); }
+
+:focus-visible {
+  outline: 2px solid var(--a0);
+  outline-offset: 2px;
+  border-radius: var(--r6);
+}
+
+input, button, select, textarea { font-family: inherit; font-size: inherit; }
+
+/* Remove number spinners */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input[type='number'] { -moz-appearance: textfield; }
+
+/* Date picker */
+input[type='date'] { cursor: pointer; }
+:root input[type='date'], [data-theme='dark'] input[type='date'] { color-scheme: dark; }
+[data-theme='light'] input[type='date'] { color-scheme: light; }
+input[type='date']::-webkit-calendar-picker-indicator {
+  cursor: pointer; opacity: 0;
+  position: absolute; inset: 0; width: 100%; height: 100%;
+}
+
+/* Electron regions */
+.drag    { -webkit-app-region: drag;    app-region: drag; }
+.no-drag { -webkit-app-region: no-drag; app-region: no-drag; }
+
+/* Utility classes */
+.anim-fade   { animation: fadeIn     .15s ease; }
+.anim-modal  { animation: modalIn    .22s var(--ease-out); }
+.anim-right  { animation: slideRight .20s var(--ease-out); }
+.anim-down   { animation: slideDown  .16s ease; }
+.anim-spin   { animation: spin .8s linear infinite; }
+
+.skeleton {
+  background: linear-gradient(90deg,
+    var(--s1) 25%, var(--s2) 50%, var(--s1) 75%
+  );
+  background-size: 400px 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+.tabnum { font-variant-numeric: tabular-nums; }
+
+/* Numpad press feedback */
+.numkey { transition: transform .08s ease, background .08s ease; }
+.numkey:active { transform: scale(.92); }
